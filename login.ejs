@@ -1,0 +1,355 @@
+
+
+	<!-- Latest compiled and minified CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/TweenLite.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.2/plugins/CSSPlugin.min.js"></script>
+
+
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(document).mousemove(function(e){
+     TweenLite.to($('body'), 
+        .5, 
+        { css: 
+            {
+                'background-position':parseInt(event.pageX/8) + "px "+parseInt(event.pageY/12)+"px, "+parseInt(event.pageX/15)+"px "+parseInt(event.pageY/15)+"px, "+parseInt(event.pageX/30)+"px "+parseInt(event.pageY/30)+"px"
+            }
+        });
+  });
+});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function(){$("body").hide().fadeIn(1000)});
+	$(document).ready(function(){$("div").hide().fadeIn(1400)});
+	$(document).ready(function(){$("h1").hide().fadeIn(1300)});
+</script>
+
+<script type="text/javascript">
+
+
+function surligne(champ, erreur)
+{
+   if(erreur)
+      champ.style.backgroundColor = "#fba";
+   else
+      champ.style.backgroundColor = "#64FE2E";
+}
+
+function verifNom(champ)
+{
+   if(champ.value.length < 3 || champ.value.length > 20)
+   {
+    $("#champ").effect("shake");
+      surligne(champ, true);
+      return false;
+   }
+   else
+   {
+      surligne(champ, false);
+      return true;
+   }
+}
+function verifMail(champ)
+{
+   var regex = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+   if(!regex.test(champ.value))
+   {
+      $("#champs").effect("shake");
+      surligne(champ, true);
+      return false;
+   }
+   else
+   {
+      surligne(champ, false);
+      return true;
+   
+    }
+}
+
+function verifForm(f)
+{
+   var nomOk = verifNom(f.nom);
+   var mailOk = verifMail(f.mail);
+   
+   if(nomOk && mailOk)
+      return true;
+    else{
+      return false;
+    }
+}
+</script>
+
+<style>
+	body{
+	  background:url("pinlayer2.png"),url("/pinlayer1.png"),url("back2.png"); 
+}
+
+div.formulaire{
+  padding-bottom: 9px;
+  padding-left:535px;
+}
+
+
+
+
+
+.etoile{
+  color:red;
+}
+
+section{
+  background-color:white;
+  width: 1000px;
+  margin:auto;
+  margin-top:50px;
+  list-style-type: none;
+  box-shadow:2px 2px 2px rgba(0,0,0,0.9),
+  -1px -1px 2px white;
+  border-radius: 5px;
+  margin-top:260px; 
+}
+h1{
+  padding-top: 30px;
+  padding-left: 70px;
+  text-shadow:7px 6px 10px black;
+  font-size:30px;
+}
+.formulaireId{
+  margin-top: 30px;
+  margin-left: -360px;
+
+
+}
+
+.nom{
+  width:300px;
+  height:25px;
+  box-sizing:content-box;
+
+} 
+.nom:hover{
+  box-shadow: 0px 0px 6px 0px #999999;
+  border-style:solid;
+  border-color:#cfcfcf;
+  box-sizing:content-box;
+}
+.nom:focus{
+  box-shadow: 0px 0px 6px 0px #999999;
+  border-style:solid;
+  border-color:#cfcfcf;
+  box-sizing:content-box;
+}
+.email{
+  width:300px;
+  height:25px;
+  box-sizing:content-box;
+}
+.email:hover{
+  box-shadow: 0px 0px 6px 0px #999999;
+  border-style:solid;
+  border-color:#cfcfcf;
+  box-sizing:content-box;
+}
+.email:focus{
+  box-shadow: 0px 0px 6px 0px #999999;
+  border-style:solid;
+  border-color:#cfcfcf;
+  box-sizing:content-box;
+}
+
+textarea{
+  margin-top: -105px;
+  margin-left: 346px;
+}
+
+.reload{
+  background: -webkit-linear-gradient(top, #ffffff, #e0e0e0);
+  padding:10px 26px;
+  color:#666666;
+  font-weight: bold;
+  border-width: 1px;
+  border-color:#c2c2c2;
+  border-style:solid;
+}
+
+.reload:hover{
+  transition:box-shadow 0.3s;
+  background: -webkit-linear-gradient(top, #ffffff, #e0e0e0);
+  box-shadow: 0px 0px 6px 0px #999999;
+  border-style:solid;
+  border-width:1px;
+  border-color:#cfcfcf;
+  box-sizing:content-box;
+}
+.commentairee{
+  display: inline-block;
+}
+
+.securitee{
+  display: inline-block;
+  margin-top: -110px;
+}
+
+#captcha{
+  margin-top: -85px;
+}
+.reload{
+  margin-top: -28px;
+}
+.securite{
+  width:300px;
+  height:25px;
+  box-sizing:content-box;
+}
+
+.securite:hover{
+  box-shadow: 0px 0px 6px 0px #999999;
+  border-style:solid;
+  border-color:#cfcfcf;
+  box-sizing:content-box;
+}
+
+.securite:focus{
+  box-shadow: 0px 0px 6px 0px #999999;
+  border-style:solid;
+  border-color:#cfcfcf;
+  box-sizing:content-box;
+}
+
+.comments{
+
+box-sizing:content-box;
+}
+.comments:hover{
+  box-shadow: 0px 0px 6px 0px #999999;
+  border-style:solid;
+  border-color:#cfcfcf;
+  box-sizing:content-box;
+}
+
+.comments:focus{
+  box-shadow: 0px 0px 6px 0px #999999;
+  border-style:solid;
+  border-color:#cfcfcf;
+  box-sizing:content-box;
+}
+
+.submit{
+  background: -webkit-linear-gradient(top, #ffffff, #e0e0e0);
+  padding:10px 26px;
+  position: relative;
+  left:550px;
+  bottom:55px;
+  color:#666666;
+  font-weight: bold;
+  border-width: 1px;
+  border-color:#c2c2c2;
+  border-style:solid;
+
+
+}
+.submit:hover{
+  transition:box-shadow 0.3s;
+  background: -webkit-linear-gradient(top, #ffffff, #e0e0e0);
+  box-shadow: 0px 0px 6px 0px #999999;
+  border-style:solid;
+  border-width:1px;
+  border-color:#cfcfcf
+
+}
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logo de merde</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Liste 
+          	<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#">Login <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Account Setting</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<section>
+		<h1>Contactez nous pour toute demande d'information ou de devis</h1>
+			<div class="formulaireId">
+				<form action="verification_form.php" name="formulaire" method="POST"onsubmit="return verifForm(this)">
+					<div class="formulaire">
+ 						<label>Nom<span class="etoile">*</span></label><br>
+ 						<input type="text" name="nom" class="nom" id="champ" placeholder="Your Name" onblur="verifNom(this)"/>
+ 					</div>
+				</script>
+ 					<div class="formulaire">
+ 						<label>Email <span class="etoile">*</span></label><br>
+ 						<input type="email" name="mail" class="email" id="champs" placeholder="Email Access" onblur="verifMail(this)"/>
+ 					</div>
+ 					
+ 					
+ 					<div class="formulaire">
+ 						<input type="submit" name="envoyer" id="envoi"class="submit" value="Envoyer"/>
+ 					</div>
+					</form>
+        	</div>
+</section>
+
+</body>
