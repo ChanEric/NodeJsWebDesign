@@ -1,0 +1,59 @@
+.navbar, .navbar-default{
+	background-color: #efe4b0 !important;
+	margin: 0 !important;
+}
+
+.toDoList{
+	background-color: #faf5e2 !important;
+	color: black !important;
+	text-align: center !important;
+	font-weight: bold !important;
+	border: 1px #ddd solid !important;
+}
+
+.soon{
+	background-color: #d1282d !important;
+	text-align: center !important;
+	font-weight: bold !important;
+	border: 1px #ddd solid !important;
+}
+
+footer{
+	background-color: #7f7f7f;
+}
+
+footer .footerElem{
+	text-align: center !important;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+footer a, footer span{
+	color: white !important;
+}
+
+.copyRight{
+	border-top: 1px white solid;
+}
+
+.list{
+	padding-top: 5%;
+	padding-bottom: 5%;
+	background-color:  white;
+}
+
+body{
+	background-color: #7f7f7f !important;
+}
+
+.navElem a{
+	color: white !important;
+}
+
+.navElem:hover{
+	background-color: #faf5e2 !important;
+}
+
+.nameProfil{
+	text-align: center;
+}
